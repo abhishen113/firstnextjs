@@ -1,8 +1,8 @@
 
 Its my first next js project 
 
-its full-stack project
-we will use cache system
-we will use backend api to fetch information
-we will use database to to get the information
+1. its full-stack project
+2. we will use cache system
+3. we will use backend api to fetch information
+4. we will use database to to get the information
 
