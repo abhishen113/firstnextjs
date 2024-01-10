@@ -7,7 +7,7 @@ const Footer = () =>{
 
 
       <div className={styles.container}>
-        <div className={styles.logo}>Beyond Imagination</div>
+        <div className={styles.logo}>Beyond</div>
         <div className={styles.text} > Beyond Imagination Co © All rights reserved.</div>
       </div>
 

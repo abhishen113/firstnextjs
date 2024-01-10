@@ -11,16 +11,17 @@ const AboutPage = () =>{
     <div className={style.container}>
        
       <div className={style.textContainer}>
-        <h2 className={style.subtitle}>About Abhishek</h2>
-        <h1 className={style.title}> The guy who did the things which no one imagine that he is capable of. </h1>
-        <p className={style.desc}> let's go follow the in which Abhishek went and based on his foot prints entire universe can get benefit 
-          its a wiki page where Abhishek's greatest achievements are being added to let the world aware of his greatest adventure.
+        <h2 className={style.subtitle}>About Beyond Imagination</h2>
+        <h1 className={style.title}> We create digital ideas that are bigger , bolder , braver and better. </h1>
+        <p className={style.desc}> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo pariatur esse impedit dolorum.
+         Distinctio culpa similique tempora itaque deleniti, quo pariatur blanditiis, asperiores corporis nostrum, quos eos. Modi, ipsa!
         </p>
 
         <div className={style.boxes}>
           <div className={style.box}>
-            <h1>12 k +</h1>
-            <p>People Reached</p>
+            <h1>10 +</h1>
+            <p>Year of Experience</p>
           </div>
        
 

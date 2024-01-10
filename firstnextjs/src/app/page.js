@@ -17,7 +17,7 @@ const Home = () => {
 
       <div className={style.textContainer}>
         
-        <h1 className={style.title}>Abhishek's Mind Palace </h1>
+        <h1 className={style.title}>Beyond Your Imagination.</h1>
         <p className={style.description}>This Portal is about Great Abhishek who has done so many great things in his life time and those
           things must needed to be documented so Abhishek's follower has created a website dedicated to legandary Abhishek's work.
 

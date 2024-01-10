@@ -11,6 +11,10 @@
     
 }
 
+.img{
+    object-fit: contain ;
+}
+
 .imgContainer{
     flex: 1;
     position:relative;
