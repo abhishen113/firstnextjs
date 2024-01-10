@@ -7,8 +7,8 @@ const Footer = () =>{
 
 
       <div className={styles.container}>
-        <div className={styles.logo}>Abhi-Shen</div>
-        <div className={styles.text} > Abhishek Brains Co © All rights reserved.</div>
+        <div className={styles.logo}>Beyond Imagination</div>
+        <div className={styles.text} > Beyond Imagination Co © All rights reserved.</div>
       </div>
 
     )
