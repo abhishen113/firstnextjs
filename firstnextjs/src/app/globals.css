@@ -88,3 +88,12 @@ a{
         width: 475px;
     }
 }
+
+
+
+@media (max-width:475 ) {
+    
+    .container{ 
+        width: 380px;
+    }
+}
