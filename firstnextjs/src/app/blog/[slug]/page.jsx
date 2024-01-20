@@ -1,9 +1,59 @@
 import Image from "next/image";
 import style from "./singlePost.module.css";
+import POSTUSER from "@/app/components/postUser/postUser";
+import { Suspense } from "react";
+import { getPost } from "../../../../lib/data";
 
 
 
-const SingleBlogPage = () => {
+
+
+
+// FETCH DATA WITH AN API 
+
+// const getData = async (slug) => {
+//    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+
+//    if(!res.ok){
+//       throw new Error("Something went wrong");
+
+//    }
+
+// return res.json(); 
+//    }
+
+
+
+export const generateMetaData = async ({params}) =>{
+
+   const {slug} = params;
+   const post = await getPost(slug);
+
+   return {
+      title: post.title,
+      description : post.desc,
+   };
+
+};
+
+
+
+
+const SingleBlogPage = async ({params}) => {
+
+   const {slug} = params;
+
+
+   // with api
+   // const post = await getData(slug);
+
+
+   // without api 
+   const post = await getPost(slug);
+
+
+
+
    return (
 
 
@@ -12,37 +62,33 @@ const SingleBlogPage = () => {
       <div className={style.container}>
 
 
-         <div className={style.imgContainer}>
-            <Image src="https://images.pexels.com/photos/19569670/pexels-photo-19569670/free-photo-of-green-garden-with-pond-near-old-historic-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" fill
+        { post.img && <div className={style.imgContainer}>
+            <Image src={post.img} alt="" fill
                className={style.img} />
 
-         </div>
+         </div>}
 
          <div className={style.textContainer}>
 
-            <h1 className={style.title}>Title</h1>
+            <h1 className={style.title}>{post.title}</h1>
 
             <div className={style.detail}>
 
-               <Image className={style.avatar}
-                  src="https://images.pexels.com/photos/19746338/pexels-photo-19746338/free-photo-of-brunette-model-wearing-makeup.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                  width={50}
-                  height={50}
-               />
+               
 
-               <div className={style.detailText}>
+              
+               {post && <Suspense fallback={<div> Loading ....</div>} >
 
-                  <span className={style.detailTitle}>Author</span>
-                  <span className={style.detailValue}>Abhishek shende</span>
+             <POSTUSER userId = {post.userId}/>
 
-               </div>
-
+             </Suspense> 
+}
+             
 
                <div className={style.detailText}>
 
                   <span className={style.detailTitle}>Published</span>
-                  <span className={style.detailValue}>01.01.2024</span>
+                  <span className={style.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
 
                </div>
 
@@ -50,7 +96,7 @@ const SingleBlogPage = () => {
             </div>
 
             <div className={style.content}>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis assumenda repellendus ipsum omnis est deserunt voluptates adipisci optio iure soluta ducimus impedit facere temporibus, aliquid, autem esse dolore laboriosam? Vitae!
+               {post.desc}
             </div>
 
 

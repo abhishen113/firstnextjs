@@ -47,14 +47,10 @@
     font-weight: 500;
 }
 
-.avatar{
-    object-fit:fill;
-    border-radius: 50%;
-  
-}
+
 
 .img{
-    object-fit: cover;
+    object-fit:cover;
 }
 
 

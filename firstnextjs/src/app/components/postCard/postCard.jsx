@@ -17,9 +17,9 @@ const PostCard = ({post}) => {
 
       
      <div className={style.top}>
-        <div className={style.imgContainer}>
-          <Image src="https://images.pexels.com/photos/327393/pexels-photo-327393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  className={style.img} alt="" fill  />
-        </div>
+        {post.img && <div className={style.imgContainer}>
+          <Image src={post.img}  className={style.img} alt="" fill  />
+        </div>}
         <span className={style.date}> 01.01.2024 </span>
 
 
@@ -28,7 +28,7 @@ const PostCard = ({post}) => {
       <div className={style.buttom} >
         <h1 className={style.title}>{post.title}</h1>
         <p className={style.desc}> {post.body}</p>
-        <Link className={style.link} href={ `/blog/${post.id}` }>READ MORE</Link>
+        <Link className={style.link} href={ `/blog/${post.slug}` }>READ MORE</Link>
 
       </div>
 
