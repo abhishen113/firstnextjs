@@ -40,6 +40,11 @@
     display: flex;
     gap: 20px;
   
+  
+}
+
+.detailValue{
+    font-weight: 500;
 }
 
 .avatar{
