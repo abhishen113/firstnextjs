@@ -8,17 +8,17 @@ import styles from "./blog.module.css"
 
 
 
-// const getData = async () =>{
+const getData = async () =>{
 
-//    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
+   const res = await fetch("http://localhost:3000/api/blog", {next : {revalidate:3600}});
 
-//    if(!res.ok){
-//       throw new Error("Something went wrong")
-//    }
+   if(!res.ok){
+      throw new Error("Something went wrong")
+   }
 
-//    return res.json()
+   return res.json()
 
-// }
+}
 
 
 
@@ -26,11 +26,11 @@ const BlogPage = async () => {
 
 
    // FETCH DATA FROM API 
-   // const posts = await getData()
+   const posts = await getData()
 
 
    // fetch data from local 
-   const posts = await getPosts();
+   // const posts = await getPosts();
    
 
 

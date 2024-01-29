@@ -11,16 +11,19 @@ import { getPost } from "../../../../lib/data";
 
 // FETCH DATA WITH AN API 
 
-// const getData = async (slug) => {
-//    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+const getData = async (slug) => {
+   
+   const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
-//    if(!res.ok){
-//       throw new Error("Something went wrong");
+   // console.log(res.json().b + " slug");
 
-//    }
+   if(!res.ok){
+      throw new Error("Something went wrong");
 
-// return res.json(); 
-//    }
+   }
+
+return res.json(); 
+   }
 
 
 
@@ -48,8 +51,11 @@ const SingleBlogPage = async ({params}) => {
    // const post = await getData(slug);
 
 
+
+
    // without api 
    const post = await getPost(slug);
+   console.log(post , " abhishek" );
 
 
 
