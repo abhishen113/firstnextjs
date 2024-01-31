@@ -7,6 +7,10 @@ import { useState } from "react";
 import Image from "next/image";
 
 
+import { handleLogout } from "../../../../../lib/action";
+
+
+
 
 const links = [
 
@@ -29,13 +33,13 @@ const links = [
 
 ]
 
-const Links = () => {
+const Links = ({session}) => {
 
 
     const [open, setOpen] = useState(false)
 
     // TEMPORARY
-    const session = true;
+
     const isAdmin = true;
 
     return (
@@ -50,10 +54,13 @@ const Links = () => {
                 {
 
                     // session - if login ( agr admin h to kuch aur aur ni h to kuch aur )
-                    session ? (
+                    session? (
                         <>
-                            {isAdmin && (<NavLink item={{ title: "Admin", path: "/admin" }} />)}
+                            {session.user?.isAdmin && (<NavLink item={{ title: "Admin", path: "/admin" }} />)}
+
+                            <form action={handleLogout}>           
                             <button className={styles.logout}>Logout</button>
+                             </form>
                         </>
                     )
                         // if not login 
